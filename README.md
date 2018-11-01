@@ -32,7 +32,7 @@ Before running the profile with InSpec, define environment variables with your A
 - `AWS_SECRET_ACCESS_KEY`
 - `AWS_SESSION_TOKEN` (optional)
 
-In any AWS MFA enabled enviroment - you need to use `derived credentials` to use the CLI. Your default `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` will not satisfy the MFA Policies in AWS environments. 
+In any AWS MFA enabled environment - you need to use `derived credentials` to use the CLI. Your default `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` will not satisfy the MFA Policies in AWS environments. 
 
 The AWS documentation is here: https://docs.aws.amazon.com/cli/latest/reference/sts/get-session-token.html
 
