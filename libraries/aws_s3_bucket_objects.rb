@@ -1,3 +1,4 @@
+require 'pp'
 class AwsS3BucketObjects < Inspec.resource(1)
   name 'aws_s3_bucket_objects'
   desc 'List objects within an S3 Bucket'
@@ -38,12 +39,16 @@ class AwsS3BucketObjects < Inspec.resource(1)
         pagination_opts = { bucket: bucket_name, continuation_token: api_result.next_continuation_token }
       end
     end
+    @table.each do |entry|
+      entry[:public] = inspec.aws_s3_bucket_object(bucket_name: bucket_name, key: entry[:key]).public?
+    end
   end
 
   # Underlying FilterTable implementation.
   filter = FilterTable.create
   filter.register_custom_matcher(:exists?) { |x| !x.entries.empty? }
   filter.register_column(:keys, field: :key)
+  filter.register_column(:public_objects, field: :public)
   filter.install_filter_methods_on_resource(self, :table)
 
   def to_s

@@ -22,6 +22,6 @@ control "s3-buckets-no-public-access" do
 
   if aws_s3_buckets.bucket_names.empty?
     impact 0.0
-    desc 'This control is Non Applicable since no S3 buckets were found.'
+    desc "This control is Non Applicable since no S3 buckets were found."
   end
 end
