@@ -99,7 +99,7 @@ $ inspec exec /path/to/profile --controls s3-buckets-no-public-access -t aws://
 
 ### Authors
 
-- Author:: Rony Xavier [rx294@nyu.com](mailto:rx294@nyu.edu)
+- Author:: Rony Xavier [rx294@nyu.edu](mailto:rx294@nyu.edu)
 - Author:: Matthew Dromazos [dromazmj@dukes.jmu.edu](mailto:mattdromazos9@gmail.com )
 - Author:: Aaron Lippold [lippold@gmail.com](mailto:lippold@gmail.com)
 
